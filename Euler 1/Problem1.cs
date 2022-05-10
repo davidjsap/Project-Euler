@@ -14,7 +14,18 @@ class ProblemSolver
         //Start program, prompt user for maximum.
         Console.WriteLine("This program finds all the multiples of 3 or 5 below a given number and adds them up.");
         Console.WriteLine("What number do you want to choose as the maximum?");
-        solver.maximumNumber = int.Parse(Console.ReadLine());
+
+        //Check to make sure an int was entered and make it the maximum number.
+        int X;
+        String userInput = Console.ReadLine();
+        while (!Int32.TryParse(userInput, out X))
+        {
+            Console.WriteLine("Please try again, making sure you've entered a valid integer.");
+
+            userInput = Console.ReadLine();
+        }
+
+        solver.maximumNumber = int.Parse(userInput);
         Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {solver.maximumNumber}.");
 
         //Add multiples that satisfy conditions to list
