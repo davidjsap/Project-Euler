@@ -1,0 +1,46 @@
+﻿using System;
+
+class ProblemSolver
+{
+    private int maximumNumber = 10;
+    private int sumTotal = 0;
+    private List<int> listOfMultiples = new List<int>();
+    
+    static void Main()
+    {
+        ProblemSolver solver = new ProblemSolver();
+
+
+        //Start program, prompt user for maximum.
+        Console.WriteLine("This program finds all the multiples of 3 or 5 below a given number and adds them up.");
+        Console.WriteLine("What number do you want to choose as the maximum?");
+        solver.maximumNumber = int.Parse(Console.ReadLine());
+        Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {solver.maximumNumber}.");
+
+        //Add multiples that satisfy conditions to list
+        solver.FindMultiples();
+
+        Console.WriteLine($"There were {solver.listOfMultiples.Count} unique multiples found.");
+        Console.WriteLine("Adding them up...");
+
+        //Add up all the multiples
+        foreach (var multiple in solver.listOfMultiples)
+        {
+            solver.sumTotal += multiple;
+        }
+
+        Console.WriteLine($"The sum total of the {solver.listOfMultiples.Count} multiples is {solver.sumTotal}!");
+
+    }
+
+    private void FindMultiples()
+    {
+        for (int i = 1; i < maximumNumber; i++)
+        {
+            if (i % 3 == 0 || i % 5 == 0)
+            {
+                listOfMultiples.Add(i);
+            }
+        }
+    }
+}
