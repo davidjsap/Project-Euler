@@ -6,11 +6,8 @@ public class Problem1
     private int sumTotal = 0;
     private List<int> listOfMultiples = new List<int>();
     
-    public static void StartProblem()
+    public void StartProblem()
     {
-        Problem1 problem = new Problem1();
-
-
         //Start program, prompt user for maximum.
         Console.WriteLine("This program finds all the multiples of 3 or 5 below a given number and adds them up.");
         Console.WriteLine("What number do you want to choose as the maximum?");
@@ -25,22 +22,22 @@ public class Problem1
             userInput = Console.ReadLine();
         }
 
-        problem.maximumNumber = int.Parse(userInput);
-        Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {problem.maximumNumber}.");
+        maximumNumber = int.Parse(userInput);
+        Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {maximumNumber}.");
 
         //Add multiples that satisfy conditions to list
-        problem.FindMultiples();
+        FindMultiples();
 
-        Console.WriteLine($"There were {problem.listOfMultiples.Count} unique multiples found.");
+        Console.WriteLine($"There were {listOfMultiples.Count} unique multiples found.");
         Console.WriteLine("Adding them up...");
 
         //Add up all the multiples
-        foreach (var multiple in problem.listOfMultiples)
+        foreach (var multiple in listOfMultiples)
         {
-            problem.sumTotal += multiple;
+            sumTotal += multiple;
         }
 
-        Console.WriteLine($"The sum total of the {problem.listOfMultiples.Count} multiples is {problem.sumTotal}!");
+        Console.WriteLine($"The sum total of the {listOfMultiples.Count} multiples is {sumTotal}!");
 
     }
 

@@ -7,35 +7,33 @@ public class Problem2
     int y = 2;
     int finalSum = 0;
 
-    public static void StartProblem()
+    public void StartProblem()
     {
-        Problem2 problem = new Problem2();
-
         //Add starting number
-        problem.fibonacciNumbers.Add(problem.x);
+        fibonacciNumbers.Add(x);
 
         //Find all Fib numbers
-        while (problem.y <= 4000000)
+        while (y <= 4000000)
         {
-            int sum = problem.x + problem.y;
-            problem.fibonacciNumbers.Add(problem.y);
+            int sum = x + y;
+            fibonacciNumbers.Add(y);
 
-            problem.x = problem.y;
-            problem.y = sum;
+            x = y;
+            y = sum;
 
         }
 
 
         //Iterate through list of Fib numbers and add even ones
-        foreach (var number in problem.fibonacciNumbers)
+        foreach (var number in fibonacciNumbers)
         {
             if (number % 2 == 0)
             {
-                problem.finalSum += number;
+                finalSum += number;
             }
         }
 
-        Console.WriteLine($"The sum of all even fibonacci numbers under 4,000,000 is {problem.finalSum}.");
+        Console.WriteLine($"The sum of all even fibonacci numbers under 4,000,000 is {finalSum}.");
     }
 
 
