@@ -1,14 +1,14 @@
 ﻿using System;
 
-public class ProblemSolver
+public class Problem1
 {
     private int maximumNumber = 10;
     private int sumTotal = 0;
     private List<int> listOfMultiples = new List<int>();
     
-    public static void StartProblem1()
+    public static void StartProblem()
     {
-        ProblemSolver solver = new ProblemSolver();
+        Problem1 problem = new Problem1();
 
 
         //Start program, prompt user for maximum.
@@ -25,28 +25,23 @@ public class ProblemSolver
             userInput = Console.ReadLine();
         }
 
-        solver.maximumNumber = int.Parse(userInput);
-        Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {solver.maximumNumber}.");
+        problem.maximumNumber = int.Parse(userInput);
+        Console.WriteLine($"Ok. Finding all multiples of 3 or 5 up to {problem.maximumNumber}.");
 
         //Add multiples that satisfy conditions to list
-        solver.FindMultiples();
+        problem.FindMultiples();
 
-        Console.WriteLine($"There were {solver.listOfMultiples.Count} unique multiples found.");
+        Console.WriteLine($"There were {problem.listOfMultiples.Count} unique multiples found.");
         Console.WriteLine("Adding them up...");
 
         //Add up all the multiples
-        foreach (var multiple in solver.listOfMultiples)
+        foreach (var multiple in problem.listOfMultiples)
         {
-            solver.sumTotal += multiple;
+            problem.sumTotal += multiple;
         }
 
-        Console.WriteLine($"The sum total of the {solver.listOfMultiples.Count} multiples is {solver.sumTotal}!");
+        Console.WriteLine($"The sum total of the {problem.listOfMultiples.Count} multiples is {problem.sumTotal}!");
 
-    }
-
-    static void Main()
-    {
-        Console.WriteLine("hey");
     }
 
     private void FindMultiples()

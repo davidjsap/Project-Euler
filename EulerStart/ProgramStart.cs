@@ -22,13 +22,13 @@ public class ProgramStart
         switch (solutionNumber)
         {
             case 1:
-                ProblemSolver.StartProblem1();
+                Problem1.StartProblem();
                 break;
             case 2:
-                Console.WriteLine("you chose 2");
+                Problem2.StartProblem();
                 break;
             default:
-                Console.WriteLine();
+                Console.WriteLine("Entry invalid, please try again.");
                 break;
         }
 
