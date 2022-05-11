@@ -6,7 +6,7 @@ class ProblemSolver
     private int sumTotal = 0;
     private List<int> listOfMultiples = new List<int>();
     
-    static void Main()
+    public void StartProblem1()
     {
         ProblemSolver solver = new ProblemSolver();
 
@@ -42,6 +42,11 @@ class ProblemSolver
 
         Console.WriteLine($"The sum total of the {solver.listOfMultiples.Count} multiples is {solver.sumTotal}!");
 
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("hey");
     }
 
     private void FindMultiples()
