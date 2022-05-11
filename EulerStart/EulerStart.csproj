@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Euler 1\Euler 1.csproj" />
-    <ProjectReference Include="..\Euler 2\Euler 2.csproj" />
-  </ItemGroup>
-
 </Project>
