@@ -38,6 +38,11 @@ public class Problem2
         Console.WriteLine($"The sum of all even fibonacci numbers under 4,000,000 is {problem.finalSum}.");
     }
 
+    public static void Main()
+    {
+
+    }
+
 
 }
 
