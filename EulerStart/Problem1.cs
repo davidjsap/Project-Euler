@@ -14,7 +14,7 @@ public class Problem1
 
         //Check to make sure an int was entered and make it the maximum number.
         int X;
-        String userInput = Console.ReadLine();
+        string? userInput = Console.ReadLine();
         while (!Int32.TryParse(userInput, out X))
         {
             Console.WriteLine("Please try again, making sure you've entered a valid integer.");

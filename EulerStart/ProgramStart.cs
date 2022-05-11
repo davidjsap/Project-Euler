@@ -8,7 +8,7 @@ public class ProgramStart
         Console.WriteLine("What problem would you like to get the solution for?");
 
         int X;
-        String userInput = Console.ReadLine();
+        string? userInput = Console.ReadLine();
         while (!Int32.TryParse(userInput, out X))
         {
             Console.WriteLine("Please try again, making sure you've entered a valid integer.");
