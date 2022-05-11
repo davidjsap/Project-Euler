@@ -1,12 +1,12 @@
 ﻿using System;
 
-class ProblemSolver
+public class ProblemSolver
 {
     private int maximumNumber = 10;
     private int sumTotal = 0;
     private List<int> listOfMultiples = new List<int>();
     
-    public void StartProblem1()
+    public static void StartProblem1()
     {
         ProblemSolver solver = new ProblemSolver();
 

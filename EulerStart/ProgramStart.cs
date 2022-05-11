@@ -22,7 +22,7 @@ public class ProgramStart
         switch (solutionNumber)
         {
             case 1:
-                Console.WriteLine("you chose 1");
+                ProblemSolver.StartProblem1();
                 break;
             case 2:
                 Console.WriteLine("you chose 2");
