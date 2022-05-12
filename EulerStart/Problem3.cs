@@ -17,25 +17,45 @@ public class Problem3
         {
             if (maxNumber % i == 0) // get list of all factors
             {
-                allFactors.Add(i);
+                if (i != 1)
+                {
+                    allFactors.Add(i);
+                }
+
             }
         }
+
+        Console.WriteLine("The following factors were found: ");
+        Console.WriteLine(string.Join("\t", allFactors));
 
         for (int i = 0; i < allFactors.Count; i++) // iterate through each factor
         {
-            for (int j = 0; j < i; j++) //iterate through each factor infront of this factor to check if any are divisible into it
+            if (i == 0)
             {
-                if (allFactors[i] % allFactors[j] == 0)
+                primeFactors.Add(allFactors[i]);
+            }
+            else
+            {
+                for (int j = 0; j <= i; j++) //iterate through each factor infront of this factor to check if any are divisible into it
                 {
-                    return;
-                }
-                else
-                {
-                    primeFactors.Add(i);
+                    Console.WriteLine($"Comparing i = {allFactors[i]} and j = {allFactors[j]}");
+
+                    if (allFactors[i] == allFactors[j])
+                    {
+                        //I have gotten to myself in the list without any factors, so I am a prime factor
+                        primeFactors.Add(allFactors[i]);
+
+                    }
+                    else if (allFactors[i] % allFactors[j] == 0)
+                    {
+                        //if I hit a number that gives me a remainder of 0, Im not a prime factor, don't add
+                        break;
+                    }
                 }
             }
         }
 
+        Console.WriteLine("Of these, the following prime factors were found: ");
         Console.WriteLine(string.Join("\t", primeFactors));
 
     }
