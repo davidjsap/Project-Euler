@@ -25,7 +25,7 @@ public class Problem3
         {
             for (int j = 0; j < i; j++) //iterate through each factor infront of this factor to check if any are divisible into it
             {
-                if (i % j == 0)
+                if (allFactors[i] % allFactors[j] == 0)
                 {
                     return;
                 }
