@@ -9,6 +9,7 @@ public class Problem3
 
     private int maxNumber = 13195;
     private List<int> allFactors = new List<int>();
+    private List<int> primeFactors = new List<int>();
 
     public void StartProblem()
     {
@@ -20,8 +21,22 @@ public class Problem3
             }
         }
 
-        Console.WriteLine(allFactors);
-        
+        for (int i = 0; i < allFactors.Count; i++) // iterate through each factor
+        {
+            for (int j = 0; j < i; j++) //iterate through each factor infront of this factor to check if any are divisible into it
+            {
+                if (i % j == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    primeFactors.Add(i);
+                }
+            }
+        }
+
+        Console.WriteLine(string.Join("\t", primeFactors));
 
     }
 }
