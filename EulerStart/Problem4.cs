@@ -11,7 +11,22 @@ public class Problem4
 
     public void StartProblem()
     {
-        
+        for (int i = 99; i > 0; i--)
+        {
+            for (int j = i; j > 0; j--)
+            {
+                int product = i * j;
+                var productFrontToBack = product.ToString().ToCharArray();
+                var productBackToFront = productFrontToBack.Reverse();
+
+
+                if (productFrontToBack == productBackToFront)
+                {
+                    Console.WriteLine($"found one! its {productFrontToBack}!");
+                    break;
+                }
+            }
+        }
 
     }
 }
