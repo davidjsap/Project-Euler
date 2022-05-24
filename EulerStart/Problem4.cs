@@ -11,8 +11,8 @@ public class Problem4
 
     public void StartProblem()
     {
-        Console.WriteLine("Question 4 reads: A palindromic number reads the same both ways.The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. \n Find the largest palindrome made from the product of two 3-digit numbers.");
-        Console.WriteLine($"Finding the largest palindrome made up from 3 digit numbers now...");
+        Console.WriteLine("\n\nQuestion 4 reads: A palindromic number reads the same both ways.The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. \n\nFind the largest palindrome made from the product of two 3-digit numbers.");
+        Console.WriteLine($"\nFinding the largest palindrome made up from 3 digit numbers now...");
 
         for (int i = 999; i > 99; i--)
         {
@@ -21,22 +21,23 @@ public class Problem4
             {
 
                 int product = i * j;
-                string productFrontToBack = product.ToString();
-                string productBackToFront = Reverse(productFrontToBack);
-
-                Console.WriteLine($"Checking {i} * {j} = {product}!");
-
-
-                if (String.Equals(productFrontToBack,productBackToFront))
+                if (product < largestPalindromeSoFar)
                 {
-                    if (product > largestPalindromeSoFar)
+                    break;
+                }
+                else
+                {
+                    string productFrontToBack = product.ToString();
+                    string productBackToFront = Reverse(productFrontToBack);
+
+
+                    if (String.Equals(productFrontToBack, productBackToFront))
                     {
                         largestPalindromeSoFar = product;
                         break;
                     }
-
-
                 }
+
             }
         }
 
