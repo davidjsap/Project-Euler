@@ -41,7 +41,6 @@ public class Problem4
             }
         }
 
-
         Console.WriteLine($"\n The largest palindrome made from two 3-digit numbers is {largestPalindromeSoFar}.");
 
     }
