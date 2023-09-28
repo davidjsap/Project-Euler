@@ -37,6 +37,10 @@ public class ProgramStart
                 Problem4 problem4 = new Problem4();
                 problem4.StartProblem();
                 break;
+            case 5:
+                Problem5 problem5 = new Problem5();
+                problem5.StartProblem();
+                break;
             default:
                 Console.WriteLine("Entry invalid, please try again.");
                 break;
