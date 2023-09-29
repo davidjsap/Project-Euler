@@ -28,7 +28,7 @@ public class Problem1
         //Add multiples that satisfy conditions to list
         FindMultiples();
 
-        Console.WriteLine($"There were {listOfMultiples.Count} unique multiples found.");
+        Console.WriteLine($"There were {listOfMultiples.Count} unique multiples found. Nice!");
         Console.WriteLine("Adding them up...");
 
         //Add up all the multiples
