@@ -14,6 +14,8 @@ public class Problem5 : IProblem
     {
         Console.WriteLine($"Finding smallest positive number that is evenly divisible by numbers from 1 to {maxNumber}...");
 		
+        Console.WriteLine("\n");
+
         // First, get all prime numbers below maxNumber
         Console.WriteLine($"First, getting all prime numbers below {maxNumber}...");
 
@@ -29,7 +31,7 @@ public class Problem5 : IProblem
         Console.WriteLine($"The prime numbers below {maxNumber} are: ");
         foreach (var item in primeNumbersBelowMaxNumber)
         {
-            Console.Write(item);
+            Console.Write(item + ",");
         }
         Console.WriteLine("\n");
 
@@ -40,17 +42,18 @@ public class Problem5 : IProblem
         {
             List<int> primeFactors = new List<int>();
 		    primeFactors = PrimeFactors(i);
+            Console.Write($"{i} | ");
             foreach (var item in primeFactors)
             {
-                Console.Write(item);
+                Console.Write(item + ",");
             }
             listOfLists.Add(primeFactors);
             Console.WriteLine("\n");
 
         }
 
-        // Finally, find the max number of appearances of each prime and use that as the exponential
-        Console.WriteLine("Finally, find the max number of appearances of each prime and use that as the exponential");
+        // Third, finding the max number of appearances of each prime and use that as the exponential for each prime
+        Console.WriteLine("Third, finding the max number of appearances of each prime and using that as the exponential for each prime...");
 
         List<int> listOfExponentials = new List<int>();
 
@@ -75,20 +78,23 @@ public class Problem5 : IProblem
                 }
             }
 
-            //Console.WriteLine($"The number of {primeNumber}'s is {numOfAppearancesOfThisPrime}.");
             listOfExponentials.Add(numOfAppearancesOfThisPrime);
+            Console.WriteLine($"The number of {primeNumber}'s is {numOfAppearancesOfThisPrime}.");
         }
+
+        Console.WriteLine("\n");
+
+        // Finally, multiplying all the resulting numbers together to find the least common multiple
+        Console.WriteLine("Finally, multiplying all the resulting numbers together to find the least common multiple...");
 
         int finalNumber = 1;
         for (int i = 0; i < primeNumbersBelowMaxNumber.Count; i++)
         {
             int result = (int)Math.Pow(primeNumbersBelowMaxNumber[i], listOfExponentials[i]);
-            //Console.WriteLine($"The number {primeNumbersBelowMaxNumber[i]} raised to the power of {listOfExponentials[i]} = {result}.");
             finalNumber *= result;
         }
 
-        Console.WriteLine($"The answer is: {finalNumber}.");
-        
+        Console.WriteLine($"The least common multiple for all the numbers between 1 and {maxNumber} is: {finalNumber}.");
 
     }
 
