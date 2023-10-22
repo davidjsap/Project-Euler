@@ -7,10 +7,39 @@ using System;
 
 public class Problem5 : IProblem
 {
+    private bool numberFound = false;
+    int maxNumber = 10;
+	int smallestNumberThatSatisfies;
 
     public void StartProblem()
     {
+        Console.WriteLine($"Finding smallest positive number that is evenly divisible by numbers from 1 to {maxNumber}...");
+		
+        int i = 1;
+        while (numberFound == false)
+        {
+		    for (int j = 1; j < maxNumber + 1; j++)
+            {
+				if (i % j != 0)
+				{
+					break;
+				}
+					
+                
+				
+				if (j == maxNumber)
+				{
+					smallestNumberThatSatisfies = i;
+					Console.WriteLine("Found smallest number to satisfy: " + smallestNumberThatSatisfies);
+					numberFound=true;
+				}
+            }
+			
+            i++;
+			Console.WriteLine("Trying next number " + i);
+        }
 
+        Console.WriteLine($"The smallest positive number that is evenly divisible by numbers from 1 to {maxNumber} is {smallestNumberThatSatisfies}.");
 
     }
 
