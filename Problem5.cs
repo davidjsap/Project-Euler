@@ -8,7 +8,7 @@ using System;
 public class Problem5 : IProblem
 {
     private bool numberFound = false;
-    int maxNumber = 10;
+    int maxNumber = 20;
 	int smallestNumberThatSatisfies;
 
     public void StartProblem()
