@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-public class Problem3
+public class Problem3 : IProblem
 {
 
     // The prime factors of 13195 are 5, 7, 13 and 29.
@@ -39,6 +39,8 @@ public class Problem3
         }
 
         Console.WriteLine($"The largest prime number is {maxNumber}.");
+
+        ProblemDecider.Instance?.ResetProblem();
 
     }
 }

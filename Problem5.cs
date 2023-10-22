@@ -1,6 +1,6 @@
 using System;
 
-public class Problem5
+public class Problem5 : IProblem
 {
 
 

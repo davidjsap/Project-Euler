@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Problem2
+public class Problem2 : IProblem
 {
     List<int> fibonacciNumbers = new List<int>();
     int x = 1;
@@ -34,6 +34,8 @@ public class Problem2
         }
 
         Console.WriteLine($"The sum of all even fibonacci numbers under 4,000,000 is {finalSum}.");
+
+        ProblemDecider.Instance?.ResetProblem();
     }
 
 

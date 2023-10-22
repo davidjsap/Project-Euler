@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Problem1
+public class Problem1 : IProblem
 {
     private int maximumNumber = 10;
     private int sumTotal = 0;
@@ -38,6 +38,8 @@ public class Problem1
         }
 
         Console.WriteLine($"The sum total of the {listOfMultiples.Count} multiples is {sumTotal}!");
+
+        ProblemDecider.Instance?.ResetProblem();
 
     }
 
