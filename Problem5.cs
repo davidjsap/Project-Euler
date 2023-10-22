@@ -41,6 +41,8 @@ public class Problem5 : IProblem
 
         Console.WriteLine($"The smallest positive number that is evenly divisible by numbers from 1 to {maxNumber} is {smallestNumberThatSatisfies}.");
 
+        ProblemDecider.Instance?.ResetProblem();
+
     }
 
 }
