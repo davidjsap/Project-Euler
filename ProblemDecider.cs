@@ -50,6 +50,10 @@ public class ProblemDecider
                 Problem5 problem5 = new Problem5();
                 problem5.StartProblem();
                 break;
+            case 6:
+                Problem6 problem6 = new Problem6();
+                problem6.StartProblem();
+                break;
             default:
                 Console.WriteLine("Entry invalid, please try again.");
                 break;
