@@ -4,6 +4,7 @@
 */
 
 using System;
+using MathUtilities;
 
 public class Problem5 : IProblem
 {
@@ -22,7 +23,7 @@ public class Problem5 : IProblem
         List<int> primeNumbersBelowMaxNumber = new List<int>();
         for (int i = 1; i < maxNumber; i++)
         {
-            if (IsPrime(i))
+            if (MathLibrary.IsPrime(i))
             {
                 primeNumbersBelowMaxNumber.Add(i);
             }
@@ -96,27 +97,6 @@ public class Problem5 : IProblem
 
         Console.WriteLine($"The least common multiple for all the numbers between 1 and {maxNumber} is: {finalNumber}.");
 
-    }
-
-    private bool IsPrime(int n)
-    {
-        if (n <= 1)
-        {
-            return false;
-        }
-
- 
-        // Check from 2 to sqrt(n)
-        for (int i = 2; i <= Math.Sqrt(n); i++)
-        {
-            if (n % i == 0)
-            {
-                return false;
-            }
-
-        }
-
-        return true;
     }
 
     static List<int> PrimeFactors(int n)
