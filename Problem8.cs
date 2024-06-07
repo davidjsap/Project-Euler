@@ -16,7 +16,7 @@ public class Problem8 : IProblem
 
     public void StartProblem()
     {
-        for (int i = 0; i < num1000digit.Length; i++)
+        for (int i = 0; i < (num1000digit.Length - 12); i++)
         {
             string subString = num1000digit.Substring(i, 13);
             long product = 1;
